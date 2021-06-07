@@ -44,7 +44,7 @@
                  if (status === kakao.maps.services.Status.OK) {
                     var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
                     console.log(coords);
-                    window.ReactNativeWebView.postMessage(JSON.stringify(coords));
+                    //window.ReactNativeWebView.postMessage(JSON.stringify(coords));
                     window.ReactNativeWebView.postMessage(JSON.stringify(data));
                 } 
             });
