@@ -44,15 +44,12 @@
                 // 정상적으로 검색이 완료됐으면 
                  if (status === kakao.maps.services.Status.OK) {
                     coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-                     console.log('1coords',coords);
-            
-                    window.ReactNativeWebView.postMessage(JSON.stringify(data));    
-                    window.ReactNativeWebView.postMessage(JSON.stringify(coords));
+
+                   const addressInfo={...data,coords}
+           
+                    window.ReactNativeWebView.postMessage(JSON.stringify(addressInfo));    
                 } 
             });
-            
-            window.ReactNativeWebView.postMessage(JSON.stringify(data));
-            window.ReactNativeWebView.postMessage(JSON.stringify(coords));
 
             // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
