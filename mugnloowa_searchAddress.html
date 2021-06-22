@@ -35,7 +35,6 @@
       function sample4_execDaumPostcode() {
         new daum.Postcode({
           oncomplete: function (data) {
-            
            
             // 주소-좌표 변환 객체를 생성
             var geocoder = new kakao.maps.services.Geocoder();
@@ -45,14 +44,14 @@
                  if (status === kakao.maps.services.Status.OK) {
                     coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-                var addressInfo = {data,coords};
-
-                if(window.ReactNativeWebView?.postMessage){
-                window.ReactNativeWebView.postMessage(JSON.stringify(addressInfo));    
-                }
-              
-                window.parent.postMessage({ message: JSON.stringify(addressInfo)}, '*');
-              }
+                  var addressInfo = {data,coords};
+                   
+                  if(window.ReactNativeWebView?.postMessage){
+                    window.ReactNativeWebView.postMessage(JSON.stringify(addressInfo)); 
+                  };
+                   window.parent.postMessage({ message: JSON.stringify(addressInfo)}, '*');
+                   
+                } 
             });
 
             // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -116,3 +115,16 @@
     </script>
   </body>
 </html>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
