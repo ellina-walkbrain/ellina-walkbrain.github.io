@@ -47,7 +47,8 @@
 
                    var addressInfo = {data,coords};
            
-                    window.ReactNativeWebView.postMessage(JSON.stringify(addressInfo));    
+                    window.ReactNativeWebView.postMessage(JSON.stringify(addressInfo));   
+                   window.parent.postMessage({ message: JSON.stringify(addressInfo)}, '*');
                 } 
             });
 
