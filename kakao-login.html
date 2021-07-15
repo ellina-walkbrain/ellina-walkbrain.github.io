@@ -19,14 +19,14 @@
   </head>
   <body>
    <script type='text/javascript'>
-    window.setTimeout(() => {Kakao.Auth.login({
+     Kakao.Auth.login({
       success: function(response) {
         console.log(response);
       },
       fail: function(error) {
         console.log(error);
       },
-    })},2000)
+    })
     </script>
   </body>
 </html>
