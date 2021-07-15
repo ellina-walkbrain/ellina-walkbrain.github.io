@@ -9,7 +9,7 @@
       Kakao.init("16684e5f789d589238bd0290a36f1c75");
 
       // SDK 초기화 여부를 판단합니다.
-      if (window.ReactNativeWebView?.postMessage) {
+      if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
         window.ReactNativeWebView.postMessage(
           JSON.stringify(Kakao.isInitialized())
         );
