@@ -19,9 +19,14 @@
   </head>
   <body>
    <script type='text/javascript'>
-      Kakao.Auth.authorize({
-        redirectUri: 'https://ellina-walkbrain.github.io/kakao-login.html'
-      });
+    Kakao.Auth.login({
+      success: function(response) {
+        console.log(response);
+      },
+      fail: function(error) {
+        console.log(error);
+      },
+    });
     </script>
   </body>
 </html>
