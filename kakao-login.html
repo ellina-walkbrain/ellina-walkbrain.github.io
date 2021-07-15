@@ -14,10 +14,14 @@
           JSON.stringify(Kakao.isInitialized())
         );
       }
-      Kakao.Auth.authorize({
-      redirectUri: 'https://ellina-walkbrain.github.io/kakao-login.html'
-      });
+    
     </script>
   </head>
-  <body></body>
+  <body>
+   <script type='text/javascript'>
+      Kakao.Auth.authorize({
+        redirectUri: 'https://ellina-walkbrain.github.io/kakao-login.html'
+      });
+    </script>
+  </body>
 </html>
