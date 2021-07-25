@@ -17,10 +17,6 @@
       height: 100%;
       overflow: hidden;
     }
-    #__daum__layer_1 {
-      max-width:100%;
-      max-height:100%;
-    }
     iframe {
       overflow: scroll;
       width: 100%;
@@ -28,7 +24,7 @@
     }
   </style>
   <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <meta charset="UTF-8" />
     <title>Title</title>
   </head>
@@ -39,15 +35,7 @@
       function sample4_execDaumPostcode() {
         new daum.Postcode({
           oncomplete: function (data) {
-            const inputEl = document.getElementById('region_name');
-            const el = document.getElementById('__daum__layer_1');
-            inputEl.addEventListener('focus', (event) => {
-              el.style.marginTop = (window.scrollY || 150) + 'px'
-            }, true);
-
-            inputEl.addEventListener('blur', (event) => {
-              el.style.marginTop = '0px'
-            }, true);
+           
             // 주소-좌표 변환 객체를 생성
             var geocoder = new kakao.maps.services.Geocoder();
             // 주소로 좌표를 검색
