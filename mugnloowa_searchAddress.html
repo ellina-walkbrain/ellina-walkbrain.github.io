@@ -44,11 +44,11 @@
         height = window.innerHeight;
         window.addEventListner('resize', function(){
           if(window.innerHeight < initialHeight){
-            if(!document.body.classList.contains('keyboard'){
+            if(!document.body.classList.contains('keyboard')){
               document.body.classList.add('keyboard');
             }
           } else {
-             if(document.body.classList.contains('keyboard'){
+             if(document.body.classList.contains('keyboard')){
               document.body.classList.remove('keyboard');
             }
           }
