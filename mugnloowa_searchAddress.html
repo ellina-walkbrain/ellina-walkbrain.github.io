@@ -20,7 +20,6 @@
     #__daum__layer_1 {
       max-width:100%;
       max-height:100%;
-      margin-top: 150px !important;
     }
     iframe {
       overflow: scroll;
@@ -41,12 +40,14 @@
       window.onload = function() {
         initialHeight = window.innerHeight;
        window.addEventListener('resize', function(){
+         const el = document.getElementById('__daum__layer_1');
+         if(!el){
+           return;
+         }
           if(window.innerHeight < initialHeight){
-            document.body.style.paddingTop = (initialHeight - window.innerHeight) + 'px'
+            el.style.paddingTop = (initialHeight - window.innerHeight) + 'px'
           } else {
-             if(document.body.classList.contains('keyboard')){
-             document.body.style.paddingTop = '0px'
-            }
+             el.style.paddingTop = '0px'
           }
         })
       }
