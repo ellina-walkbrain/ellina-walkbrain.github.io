@@ -45,14 +45,14 @@
         window.addEventListner('resize', function(){
           if(window.innerHeight < initialHeight){
             if(!document.body.classList.contains('keyboard'){
-              document.body.classList.add('keyboard')
+              document.body.classList.add('keyboard');
             }
           } else {
              if(document.body.classList.contains('keyboard'){
-              document.body.classList.remove('keyboard')
+              document.body.classList.remove('keyboard');
             }
           }
-        }
+        })
       }
       function sample4_execDaumPostcode() {
         new daum.Postcode({
