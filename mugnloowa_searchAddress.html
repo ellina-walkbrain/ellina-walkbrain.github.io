@@ -17,6 +17,9 @@
       height: 100%;
       overflow: hidden;
     }
+    body.keyboard {
+      padding-top: 150px;
+    }
     #__daum__layer_1 {
       max-width:100%;
       max-height:100%;
@@ -36,6 +39,21 @@
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=16684e5f789d589238bd0290a36f1c75&libraries=services"></script>
     <script>
+      var initialHeight = 0;
+      window.onload = function() {
+        height = window.innerHeight;
+        window.addEventListner('resize', function(){
+          if(window.innerHeight < initialHeight){
+            if(!document.body.classList.contains('keyboard'){
+              document.body.classList.add('keyboard')
+            }
+          } else {
+             if(document.body.classList.contains('keyboard'){
+              document.body.classList.remove('keyboard')
+            }
+          }
+        }
+      }
       function sample4_execDaumPostcode() {
         new daum.Postcode({
           oncomplete: function (data) {
