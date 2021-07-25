@@ -42,8 +42,7 @@
       var initialHeight = 0;
       window.onload = function() {
         height = window.innerHeight;
-      }
-       window.addEventListner('resize', function(){
+       window.addEventListener('resize', function(){
           if(window.innerHeight < initialHeight){
             if(!document.body.classList.contains('keyboard')){
               document.body.classList.add('keyboard');
@@ -54,6 +53,7 @@
             }
           }
         })
+      }
       function sample4_execDaumPostcode() {
         new daum.Postcode({
           oncomplete: function (data) {
