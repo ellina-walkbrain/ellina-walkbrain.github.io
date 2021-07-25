@@ -36,25 +36,18 @@
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=16684e5f789d589238bd0290a36f1c75&libraries=services"></script>
     <script>
-      var initialHeight = 0;
-      window.onload = function() {
-        initialHeight = window.innerHeight;
-       window.addEventListener('resize', function(){
-         const el = document.getElementById('__daum__layer_1');
-         if(!el){
-           return;
-         }
-          if(window.innerHeight < initialHeight){
-            el.style.marginTop = (initialHeight - window.innerHeight) + 'px'
-          } else {
-             el.style.marginTop = '0px'
-          }
-        })
-      }
       function sample4_execDaumPostcode() {
         new daum.Postcode({
           oncomplete: function (data) {
-           
+            const inputEl = document.getElementById('region_name');
+            const el = document.getElementById('__daum__layer_1');
+            inputEl.addEventListener('focus', (event) => {
+              el.style.marginTop = (window.scrollY || 150) + 'px'
+            }, true);
+
+            inputEl.addEventListener('blur', (event) => {
+              el.style.marginTop = '0px'
+            }, true);
             // 주소-좌표 변환 객체를 생성
             var geocoder = new kakao.maps.services.Geocoder();
             // 주소로 좌표를 검색
